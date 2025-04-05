@@ -11,3 +11,92 @@ D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
 Watching for file changes with StatReloader
 D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2172
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2223
+Not Found: /docs
+"GET /docs HTTP/1.1" 404 2202
+Not Found: /
+"GET / HTTP/1.1" 404 2172
+Not Found: /
+"GET / HTTP/1.1" 404 2172
+Not Found: /
+"GET / HTTP/1.1" 404 2172
+Not Found: /
+"GET / HTTP/1.1" 404 2172
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2172
+Not Found: /
+"GET / HTTP/1.1" 404 2172
+Not Found: //
+"GET // HTTP/1.1" 404 2854
+D:\lumel assessment\backend_assessment\backend_assessment\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2829
+Not Found: /
+"GET / HTTP/1.1" 404 2829
+"POST /api/customer_analysis/ HTTP/1.1" 200 110
+"POST /api/top_products/ HTTP/1.1" 200 132
+"POST /api/revenue_analysis/ HTTP/1.1" 200 86
+Bad Request: /api/refresh_data/
+"POST /api/refresh_data/ HTTP/1.1" 400 30
+Bad Request: /api/refresh_data/
+"POST /api/refresh_data/ HTTP/1.1" 400 30
+Bad Request: /api/refresh_data/
+"POST /api/refresh_data/ HTTP/1.1" 400 30
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\utils.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\utils.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\utils.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\utils.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\utils.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\utils.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\utils.py changed, reloading.
+Watching for file changes with StatReloader
+D:\lumel assessment\backend_assessment\sales\utils.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Bad Request: /api/refresh_data/
+"POST /api/refresh_data/ HTTP/1.1" 400 30
+Watching for file changes with StatReloader

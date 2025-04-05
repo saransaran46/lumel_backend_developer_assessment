@@ -13,11 +13,11 @@ from .serializers import (
 from .utils import load_sales_data_from_csv
 import os
 
+
+
+
 class DataRefreshView(APIView):
     def post(self, request):
-        """
-        Trigger data refresh from CSV file
-        """
         csv_file_path = os.path.join(os.path.dirname(__file__), 'data/sales_data.csv')
         
         if not os.path.exists(csv_file_path):
@@ -34,11 +34,11 @@ class DataRefreshView(APIView):
         else:
             return Response({"error": message}, status=status.HTTP_400_BAD_REQUEST)
 
+
+
+
 class RevenueAnalysisView(APIView):
     def post(self, request):
-        """
-        Calculate revenue metrics with optional grouping
-        """
         serializer = RevenueAnalysisSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -58,7 +58,6 @@ class RevenueAnalysisView(APIView):
         )
         
         if group_by is None:
-            # Total revenue for the period
             total_revenue = items.aggregate(
                 total=Sum('total_revenue')
             )['total'] or 0
@@ -70,7 +69,6 @@ class RevenueAnalysisView(APIView):
             })
         
         elif group_by == 'product':
-            # Group by product
             results = items.values(
                 'product__product_id', 'product__name'
             ).annotate(
@@ -85,7 +83,6 @@ class RevenueAnalysisView(APIView):
             })
         
         elif group_by == 'category':
-            # Group by category
             results = items.values(
                 'product__category'
             ).annotate(
@@ -100,7 +97,6 @@ class RevenueAnalysisView(APIView):
             })
         
         elif group_by == 'region':
-            # Group by region
             results = items.values(
                 'order__region'
             ).annotate(
@@ -114,11 +110,11 @@ class RevenueAnalysisView(APIView):
                 "results": list(results)
             })
 
+
+
+
 class TopProductsView(APIView):
     def post(self, request):
-        """
-        Get top N products by quantity sold with optional filters
-        """
         serializer = TopProductsSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -161,11 +157,10 @@ class TopProductsView(APIView):
             "top_products": list(top_products)
         })
 
+
+
 class CustomerAnalysisView(APIView):
     def post(self, request):
-        """
-        Basic customer analysis metrics
-        """
         start_date = request.data.get('start_date')
         end_date = request.data.get('end_date')
         
@@ -175,17 +170,14 @@ class CustomerAnalysisView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
         
-        # Number of unique customers
         customer_count = Order.objects.filter(
             date_of_sale__range=(start_date, end_date)
         ).values('customer').distinct().count()
         
-        # Number of orders
         order_count = Order.objects.filter(
             date_of_sale__range=(start_date, end_date)
         ).count()
         
-        # Average order value
         order_values = OrderItem.objects.filter(
             order__date_of_sale__range=(start_date, end_date)
         ).annotate(
@@ -206,3 +198,5 @@ class CustomerAnalysisView(APIView):
             "order_count": order_count,
             "average_order_value": round(avg_order_value, 2)
         })
+
+

@@ -6,10 +6,9 @@ from .models import Customer, Product, Order, OrderItem
 
 logger = logging.getLogger(__name__)
 
+
+
 def load_sales_data_from_csv(file_path, overwrite=False):
-    """
-    Load sales data from CSV file into the database
-    """
     try:
         with open(file_path, 'r') as csvfile:
             reader = csv.DictReader(csvfile)
@@ -17,7 +16,6 @@ def load_sales_data_from_csv(file_path, overwrite=False):
             
             with transaction.atomic():
                 if overwrite:
-                    # Clear existing data if overwrite is True
                     OrderItem.objects.all().delete()
                     Order.objects.all().delete()
                     Product.objects.all().delete()
@@ -25,7 +23,6 @@ def load_sales_data_from_csv(file_path, overwrite=False):
                     logger.info("Existing data cleared for fresh import")
                 
                 for row in reader:
-                    # Create or update Customer
                     customer, _ = Customer.objects.update_or_create(
                         customer_id=row['Customer ID'],
                         defaults={
@@ -35,7 +32,6 @@ def load_sales_data_from_csv(file_path, overwrite=False):
                         }
                     )
                     
-                    # Create or update Product
                     product, _ = Product.objects.update_or_create(
                         product_id=row['Product ID'],
                         defaults={
@@ -45,7 +41,6 @@ def load_sales_data_from_csv(file_path, overwrite=False):
                         }
                     )
                     
-                    # Create or update Order
                     order, created = Order.objects.update_or_create(
                         order_id=row['Order ID'],
                         defaults={
@@ -57,7 +52,6 @@ def load_sales_data_from_csv(file_path, overwrite=False):
                         }
                     )
                     
-                    # Create or update OrderItem
                     OrderItem.objects.update_or_create(
                         order=order,
                         product=product,
@@ -79,3 +73,4 @@ def load_sales_data_from_csv(file_path, overwrite=False):
     except Exception as e:
         logger.error(f"Error loading CSV data: {str(e)}")
         return False, str(e)
+
