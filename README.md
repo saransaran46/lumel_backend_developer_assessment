@@ -49,8 +49,3 @@ after the above step --> python manage.py migrate
 6. Run the server
 
 Using this command --> python manage.py runserver
-
-
-
-
-
