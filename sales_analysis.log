@@ -100,3 +100,11 @@ Watching for file changes with StatReloader
 Bad Request: /api/refresh_data/
 "POST /api/refresh_data/ HTTP/1.1" 400 30
 Watching for file changes with StatReloader
+"POST /api/refresh_data/ HTTP/1.1" 200 40
+"POST /api/refresh_data/ HTTP/1.1" 200 40
+"POST /api/revenue_analysis/ HTTP/1.1" 200 137
+"POST /api/top_products/ HTTP/1.1" 200 132
+"POST /api/top_products/ HTTP/1.1" 200 132
+"POST /api/customer_analysis/ HTTP/1.1" 200 114
+"POST /api/top_products/ HTTP/1.1" 200 132
+"POST /api/top_products/ HTTP/1.1" 200 129
