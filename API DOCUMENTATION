@@ -1,0 +1,6 @@
+api documentation
+Endpoint	                  Method	   Description	                      Request Body - JSON                                                                                        Sample Response
+api/refresh_data/	           POST	    Load or refresh data from CSV	      {"overwrite": boolean}	                                                                              {"message": "Data loaded successfully"}
+api/revenue_analysis/	       POST	    Calculate revenue metrics	          {"start_date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD", "group_by": "product/category/region"}	        {"results": [{"group": "Electronics", "total_revenue": 50000}]}
+api/top_products/	           POST	    Get top selling products	          {"start_date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD", "limit": 10, "category": "optional"}	          {"top_products": [{"name": "Product", "total_quantity": 100}]}
+api/customer_analysis/	     POST	    Get customer metrics	              {"start_date": "YYYY-MM-DD", "end_date": "YYYY-MM-DD"}	                                              {"customer_count": 150, "order_count": 300}
